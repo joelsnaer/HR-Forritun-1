@@ -34,5 +34,16 @@ while running:
     else:
         player_choice = input("You can travel: " + directions + "\nDirection:")
         player_choice = "(" + player_choice.upper() + ")"
-
+        if player_choice in directions:
+            if player_choice == "(N)":
+                player_tile_y += 1
+            elif player_choice == "(E)":
+                player_tile_x += 1
+            elif player_choice == "(S)":
+                player_tile_y -= 1
+            elif player_choice == "(W)":
+                player_tile_x -= 1
+        else:
+            print("Not a valid direction!")
+            
             
