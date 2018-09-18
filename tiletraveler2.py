@@ -17,6 +17,7 @@ def direction_check(x,y,directions):
     return directions
 def victory_check(x,y):
     if x == 3 and y == 1:
+        print("Victory!")
         return True
 def player_input(directions, player_choice):
     player_choice = input("You can travel: " + directions + "\nDirection:")
@@ -48,7 +49,6 @@ running = True
 
 while running:
     if (victory_check(player_tile_x, player_tile_y) == True):
-        print("Victory!")
         running = False
     else:
         directions = direction_check(player_tile_x, player_tile_y, directions)
