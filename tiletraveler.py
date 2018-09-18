@@ -4,17 +4,35 @@
 # Notandinn stimplar inn hvaða átt hann vill fara í og ef hún það er ekki hægt að fara í hana prentast út villa
 # Notandinn finnur leiðina sína til 3,1 og þegar hann kemst þangað vinnur hann
 
-tile11 = "N"
-tile12 = "NES"
-tile13 = "ES"
-tile21 = "N"
-tile22 = "SW"
-tile23 = "EW"
-tile32 = "NS"
-tile33 = "SW"
+tile11 = "(N)orth"
+tile12 = "(N)orth or (E)ast or (S)outh"
+tile13 = "(E)ast or (S)outh"
+tile21 = "(N)orth"
+tile22 = "(S)outh or (W)est"
+tile23 = "(E)ast or (W)est"
+tile32 = "(N)orth or (S)outh"
+tile33 = "(S)outh or (W)est"
+directions = ""
 player_tile_x = 1
 player_tile_y = 1
+player_choice = ""
 running = True
 
 while running:
+    if player_tile_x == 1 and player_tile_y == 1: directions = tile11
+    if player_tile_x == 1 and player_tile_y == 2: directions = tile12
+    if player_tile_x == 1 and player_tile_y == 3: directions = tile13
+    if player_tile_x == 2 and player_tile_y == 1: directions = tile21
+    if player_tile_x == 2 and player_tile_y == 2: directions = tile22
+    if player_tile_x == 2 and player_tile_y == 3: directions = tile23
+    if player_tile_x == 3 and player_tile_y == 2: directions = tile32
+    if player_tile_x == 3 and player_tile_y == 3: directions = tile33
     
+    if player_tile_x == 3 and player_tile_y == 1:
+        print("Victory!")
+        running = False
+    else:
+        player_choice = input("You can travel: " + directions + "\nDirection:")
+        player_choice = "(" + player_choice.upper() + ")"
+
+            
