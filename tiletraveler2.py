@@ -6,14 +6,14 @@
 # https://github.com/joelsnaer/HR-Forritun-1
 
 def direction_check(x,y,directions):
-    if x == 1 and y == 1: directions = "(N)orth"
-    if x == 1 and y == 2: directions = "(N)orth or (E)ast or (S)outh"
-    if x == 1 and y == 3: directions = "(E)ast or (S)outh"
-    if x == 2 and y == 1: directions = "(N)orth"
-    if x == 2 and y == 2: directions = "(S)outh or (W)est"
-    if x == 2 and y == 3: directions = "(E)ast or (W)est"
-    if x == 3 and y == 2: directions = "(N)orth or (S)outh"
-    if x == 3 and y == 3: directions = "(S)outh or (W)est"
+    if x == 1 and y == 1: directions = "(N)orth."
+    if x == 1 and y == 2: directions = "(N)orth or (E)ast or (S)outh."
+    if x == 1 and y == 3: directions = "(E)ast or (S)outh."
+    if x == 2 and y == 1: directions = "(N)orth."
+    if x == 2 and y == 2: directions = "(S)outh or (W)est."
+    if x == 2 and y == 3: directions = "(E)ast or (W)est."
+    if x == 3 and y == 2: directions = "(N)orth or (S)outh."
+    if x == 3 and y == 3: directions = "(S)outh or (W)est."
     return directions
 def victory_check(x,y):
     if x == 3 and y == 1:

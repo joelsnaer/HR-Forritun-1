@@ -5,14 +5,14 @@
 # Notandinn finnur leiðina sína til 3,1 og þegar hann kemst þangað vinnur hann
 # https://github.com/joelsnaer/HR-Forritun-1
 
-tile11 = "(N)orth"
-tile12 = "(N)orth or (E)ast or (S)outh"
-tile13 = "(E)ast or (S)outh"
-tile21 = "(N)orth"
-tile22 = "(S)outh or (W)est"
-tile23 = "(E)ast or (W)est"
-tile32 = "(N)orth or (S)outh"
-tile33 = "(S)outh or (W)est"
+tile11 = "(N)orth."
+tile12 = "(N)orth or (E)ast or (S)outh."
+tile13 = "(E)ast or (S)outh."
+tile21 = "(N)orth."
+tile22 = "(S)outh or (W)est."
+tile23 = "(E)ast or (W)est."
+tile32 = "(N)orth or (S)outh."
+tile33 = "(S)outh or (W)est."
 directions = ""
 player_tile_x = 1
 player_tile_y = 1
