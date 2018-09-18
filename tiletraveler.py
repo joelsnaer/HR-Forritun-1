@@ -36,7 +36,7 @@ while running:
     else:
         if validation == 1:
             player_choice = print("You can travel: " + directions)
-        player_choice = input("Direction:")
+        player_choice = input("Direction: ")
         
         
         player_choice = "(" + player_choice.upper() + ")"

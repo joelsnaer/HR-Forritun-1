@@ -20,25 +20,26 @@ def victory_check(x,y):
         print("Victory!")
         return True
 def player_input(directions, player_choice):
-    player_choice = input("You can travel: " + directions + "\nDirection:")
-    return "(" + player_choice.upper() + ")"
+    print("You can travel: " + directions)
+    while validation:
+        player_choice = input("Direction:")
+        if player_choice.upper() in directions:
+            return "(" + player_choice.upper() + ")"
+        else:
+            print("Not a valid direction!")
 
 def movement(x,y,directions,player_choice):
-    if player_choice in directions:
-        if player_choice == "(N)":
-            y += 1
-            return x, y
-        elif player_choice == "(E)":
-            x += 1
-            return x, y
-        elif player_choice == "(S)":
-            y -= 1
-            return x, y
-        elif player_choice == "(W)":
-            x -= 1
-            return x, y
-    else:
-        print("Not a valid direction!")
+    if player_choice == "(N)":
+        y += 1
+        return x, y
+    elif player_choice == "(E)":
+        x += 1
+        return x, y
+    elif player_choice == "(S)":
+        y -= 1
+        return x, y
+    elif player_choice == "(W)":
+        x -= 1
         return x, y
 
 directions = ""
@@ -46,6 +47,7 @@ player_tile_x = 1
 player_tile_y = 1
 player_choice = ""
 running = True
+validation = True
 
 while running:
     if (victory_check(player_tile_x, player_tile_y) == True):
