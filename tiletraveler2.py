@@ -3,6 +3,7 @@
 # Það er skoðað hvaða áttir notandinn getur farið í og út frá því er prentað út hvert hann getur farið
 # Notandinn stimplar inn hvaða átt hann vill fara í og ef hún það er ekki hægt að fara í hana prentast út villa
 # Notandinn finnur leiðina sína til 3,1 og þegar hann kemst þangað vinnur hann
+# https://github.com/joelsnaer/HR-Forritun-1
 
 def direction_check(x,y,directions):
     if x == 1 and y == 1: directions = "(N)orth"
@@ -17,6 +18,30 @@ def direction_check(x,y,directions):
 def victory_check(x,y):
     if x == 3 and y == 1:
         return True
+def player_input(directions, player_choice):
+    player_choice = input("You can travel: " + directions + "\nDirection:")
+    return "(" + player_choice.upper() + ")"
+
+def movement(x,y,directions,player_choice):
+    if player_choice in directions:
+        if player_choice == "(N)":
+            y += 1
+            return y
+        elif player_choice == "(E)":
+            x += 1
+            return x
+        elif player_choice == "(S)":
+            y -= 1
+            return y
+        elif player_choice == "(W)":
+            x -= 1
+            return x
+    else:
+        print("Not a valid direction!")
+        if player_choice == "(N)" or player_choice == "(S)":
+            return x
+        else:
+            return y
 
 directions = ""
 player_tile_x = 1
@@ -25,24 +50,13 @@ player_choice = ""
 running = True
 
 while running:
-    
     if (victory_check(player_tile_x, player_tile_y) == True):
         print("Victory!")
         running = False
     else:
         directions = direction_check(player_tile_x, player_tile_y, directions)
-        player_choice = input("You can travel: " + directions + "\nDirection:")
-        player_choice = "(" + player_choice.upper() + ")"
-        if player_choice in directions:
-            if player_choice == "(N)":
-                player_tile_y += 1
-            elif player_choice == "(E)":
-                player_tile_x += 1
-            elif player_choice == "(S)":
-                player_tile_y -= 1
-            elif player_choice == "(W)":
-                player_tile_x -= 1
+        player_choice = player_input(directions, player_choice)
+        if player_choice == "(N)" or player_choice == "(S)":
+            player_tile_y = movement(player_tile_x,player_tile_y,directions,player_choice)
         else:
-            print("Not a valid direction!")
-            
-            
+            player_tile_x = movement(player_tile_x,player_tile_y,directions,player_choice)

@@ -3,6 +3,7 @@
 # Það er skoðað hvaða áttir notandinn getur farið í og út frá því er prentað út hvert hann getur farið
 # Notandinn stimplar inn hvaða átt hann vill fara í og ef hún það er ekki hægt að fara í hana prentast út villa
 # Notandinn finnur leiðina sína til 3,1 og þegar hann kemst þangað vinnur hann
+# https://github.com/joelsnaer/HR-Forritun-1
 
 tile11 = "(N)orth"
 tile12 = "(N)orth or (E)ast or (S)outh"
