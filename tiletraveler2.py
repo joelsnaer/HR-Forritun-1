@@ -22,7 +22,7 @@ def victory_check(x,y):
 def player_input(directions, player_choice):
     print("You can travel: " + directions)
     while validation:
-        player_choice = input("Direction:")
+        player_choice = input("Direction: ")
         if player_choice.upper() in directions:
             return "(" + player_choice.upper() + ")"
         else:
