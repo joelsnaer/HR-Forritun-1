@@ -26,22 +26,19 @@ def movement(x,y,directions,player_choice):
     if player_choice in directions:
         if player_choice == "(N)":
             y += 1
-            return y
+            return x, y
         elif player_choice == "(E)":
             x += 1
-            return x
+            return x, y
         elif player_choice == "(S)":
             y -= 1
-            return y
+            return x, y
         elif player_choice == "(W)":
             x -= 1
-            return x
+            return x, y
     else:
         print("Not a valid direction!")
-        if player_choice == "(N)" or player_choice == "(S)":
-            return x
-        else:
-            return y
+        return x, y
 
 directions = ""
 player_tile_x = 1
@@ -56,7 +53,4 @@ while running:
     else:
         directions = direction_check(player_tile_x, player_tile_y, directions)
         player_choice = player_input(directions, player_choice)
-        if player_choice == "(N)" or player_choice == "(S)":
-            player_tile_y = movement(player_tile_x,player_tile_y,directions,player_choice)
-        else:
-            player_tile_x = movement(player_tile_x,player_tile_y,directions,player_choice)
+        player_tile_x, player_tile_y = movement(player_tile_x,player_tile_y,directions,player_choice)
