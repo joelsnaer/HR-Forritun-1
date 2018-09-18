@@ -18,6 +18,7 @@ player_tile_x = 1
 player_tile_y = 1
 player_choice = ""
 running = True
+validation = 1
 
 while running:
     if player_tile_x == 1 and player_tile_y == 1: directions = tile11
@@ -33,18 +34,27 @@ while running:
         print("Victory!")
         running = False
     else:
-        player_choice = input("You can travel: " + directions + "\nDirection:")
+        if validation == 1:
+            player_choice = print("You can travel: " + directions)
+        player_choice = input("Direction:")
+        
+        
         player_choice = "(" + player_choice.upper() + ")"
         if player_choice in directions:
             if player_choice == "(N)":
                 player_tile_y += 1
+                validation = 1
             elif player_choice == "(E)":
                 player_tile_x += 1
+                validation = 1
             elif player_choice == "(S)":
                 player_tile_y -= 1
+                validation = 1
             elif player_choice == "(W)":
                 player_tile_x -= 1
+                
         else:
             print("Not a valid direction!")
+            validation = 0
             
             
